@@ -2,18 +2,11 @@
 let sentence = "   to     BE        oR        noOt       To        bE  ";
 
 const editStr = (str) => {
-  let temporaryVal = [];
-  str
+  return str
     .toLowerCase()
     .trim()
     .split(" ")
-    .map((item) => {
-      if (item !== "") {
-        temporaryVal.push(item);
-      }
-    });
-  let editSentence = temporaryVal
+    .filter(Boolean)
     .map((item) => item[0].toUpperCase() + item.slice(1))
     .join(" ");
-  return editSentence;
 };
